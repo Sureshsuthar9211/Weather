@@ -27,7 +27,7 @@ This project uses the **OpenWeather API** to fetch real-time weather data.
 
 ## 📸 Project Preview
 
-![Weather App Preview](images\Screenshot 2026-09-14 230843.png)
+![Weather App Preview](images\project-preview.png)
 
 ## ⚙️ How to Run
 
