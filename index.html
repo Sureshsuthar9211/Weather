@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Check weather</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <!-- navbar -->
+
+    <nav class="navbar navbar-expand-md text-bg-info" data-bs-theme="light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Weather</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" id="search-input" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-outline-success" id="search-btn" type="button">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- slide images -->
+
+
+    <div id="carouselExampleFade" class="carousel slide carousel-fade my-4">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://picsum.photos/2000/500?cloud" class="d-block w-100" alt="temperature img">
+            </div>
+            <div class="carousel-item">
+                <img src="https://picsum.photos/2000/500?rain" class="d-block w-100" alt="wing img">
+            </div>
+            <div class="carousel-item">
+                <img src="https://picsum.photos/2000/500?hot" class="d-block w-100" alt="rain img">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+    </div>
+
+    <!-- alert -->
+
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Welcome !</strong> Check weather of your city.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <!-- 404 error -->
+
+    <div class=" row row-cols-1 row-cols-md-2 my-4 align-items-center text-center" id="404-error">
+        <div>
+            <img src="404-error.png" class="img-fluid" alt="404-error.png">
+        </div>
+        <div>
+            <h1 class="display-1 fw-bold  ">Location not found</h1>
+            <p>Please enter correct location.</p>
+        </div>
+
+    </div>
+
+    <!-- fartures card -->
+
+    <div class="row row-cols-1 row-cols-md-3 g-4" id="feature-cards">
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Temperature</h5>
+                    <div class="d-flex my-4 gap-3 ">
+
+
+                        <div class="col-md-4 ">
+                            <img src="temperature-icon.png" alt="temperature-icon.png" height="100px" width="100px">
+                        </div>
+                        <div class="card-body ">
+                            <p class="card-text display-1"><span id="temperature">0</span> °C</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary" id="lastUpdated">Last updated 3 mins ago</small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+
+                <div class="card-body">
+                    <h5 class="card-title">wind speed</h5>
+                    <div class="d-flex my-4 gap-3">
+
+
+                        <div class="col-md-4 ">
+                            <img src="wind-solid.png" alt="wind-solid.png" height="100px" width="100px">
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text display-1"><span id="wind">0</span> km/h</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary" id="lastUpdated">Last updated 3 mins ago</small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Humidity</h5>
+                    <div class="d-flex my-4 gap-3">
+
+
+                        <div class="col-md-4 ">
+                            <img src="humidity.png" alt="humidity.png" height="100px" width="100px">
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text display-1"><span id="humidity">0</span> %</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary" id="lastUpdated">Last updated 3 mins ago</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
